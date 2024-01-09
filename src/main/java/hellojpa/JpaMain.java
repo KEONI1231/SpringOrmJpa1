@@ -7,12 +7,13 @@ import javax.persistence.Persistence;
 import java.util.List;
 
 public class JpaMain {
-
+    //운영장비에는 create, create-drop, update 사용금지
+    //create -> drop하고 create함
+    //create-drop -> create하고 마지막에 드랍함
+    //update -> 변경사항만 update 됨.
     public static void main(String[] args) {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
-
         EntityManager em = emf.createEntityManager();
-
         EntityTransaction tx = em.getTransaction();
         tx.begin();
 
